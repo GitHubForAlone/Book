@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config><!-- 配置的根元素 -->
+	<!-- 默认配置，如果没有指定则使用这个配置 -->
+	<default-config>
+		<!-- 连接的超时间时间，以秒 -->
+		<property name="checkoutTimeout">30000</property>
+		<!-- 空闲检查间隔,检查是否connection没有人用 -->
+		<property name="idleConnectionTestPeriod">1000</property>
+		<!-- 初始化的池大小 -->
+		<property name="initialPoolSize">20</property>
+		<!-- 最多有几个连接 -->
+		<property name="maxPoolSize">50</property>
+		<!-- 最少有几个连接 -->
+		<property name="minPoolSize">20</property>
+		<property name="autoCommitOnClose">true</property>
+		<!-- 如果池中数据连接不够时一次增长多少个 -->
+		<property name="acquireIncrement">10</property>
+		<!-- connection最大的空闲时间 -->
+		<property name="maxIdleTime">1000</property>
+		<!-- 
+			connection是从java代码到数据库的连接。所有statement都在上面传递sql语句。
+			那到这个connectoin最多可以同时让多少statement在上面传递数据呢？
+		 -->
+		<property name="maxStatements">50</property>
+		<!-- 以下连接信息 -->
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">
+			<![CDATA[jdbc:mysql://localhost:3306/book?useUnicode=true&characterEncoding=UTF-8]]>
+		</property>
+		<property name="user">root</property>
+		<property name="password">..</property>
+	</default-config> 
+</c3p0-config> 
